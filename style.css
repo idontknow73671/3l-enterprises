@@ -1,0 +1,70 @@
+:root {
+    color-scheme: light dark;
+    --background: #fff;
+    --text: #000;
+    --sidebar: #e5edf6;
+    --divider: #9ab5cf;
+    --link: #0000ee;
+    --visited: #551a8b;
+    --accent: #a43820;
+}
+* { box-sizing: border-box; }
+html { min-height: 100%; }
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 205px minmax(0, 1fr);
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+a { color: var(--link); }
+a:visited { color: var(--visited); }
+a:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+nav {
+    padding: 4px 8px;
+    background: var(--sidebar);
+    border-right: 10px solid var(--divider);
+}
+nav h2 { margin: 0 0 0.1em; font-size: 20px; }
+nav ul { list-style: none; margin: 0 0 1.1em; padding-left: 8px; }
+.freedns { display: block; width: 110px; height: auto; margin-top: 28px; max-width: 100%; }
+main { min-width: 0; display: flex; flex-direction: column; padding: 4px 8px; }
+header { text-align: center; }
+h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0;
+    font-size: clamp(32px, 5vw, 48px);
+}
+.logo { width: 90px; height: 90px; object-fit: contain; }
+.tagline { color: var(--accent); }
+section h2 { font-size: 24px; margin-bottom: 0; }
+p { margin: 1em 0; }
+footer { margin-top: auto; padding-top: 48px; padding-bottom: 8px; }
+hr { border: 0; border-top: 1px solid var(--divider); }
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #1e1f21;
+        --text: #eeeff1;
+        --sidebar: #202f51;
+        --link: #d5e5ff;
+        --visited: #ddc8ee;
+        --accent: #ed7958;
+    }
+}
+@media (max-width: 540px) {
+    body { grid-template-columns: 1fr; }
+    nav { border-right: 0; border-bottom: 6px solid var(--divider); padding: 12px; }
+    nav h2 { font-size: 18px; }
+    nav ul { margin-bottom: 12px; }
+    .freedns { margin-top: 12px; }
+    main { padding: 8px 12px; }
+    h1 { margin: 16px 0; }
+    .logo { width: 64px; height: 64px; }
+}
